@@ -9,8 +9,8 @@ namespace NerdStore.Catalogo.Data
 {
     public class CatalogoContext : DbContext, IUnitOfWork
     {
-        public DbSet<Produto> Produtos { get; }
-        public DbSet<Categoria> Categorias { get; }
+        public DbSet<Produto> Produtos { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
 
         public CatalogoContext(DbContextOptions<CatalogoContext> options)
             :base(options)
