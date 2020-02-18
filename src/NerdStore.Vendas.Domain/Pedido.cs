@@ -1,6 +1,7 @@
 ﻿using NerdStore.Core.DomainObjects;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 namespace NerdStore.Vendas.Domain
@@ -12,7 +13,7 @@ namespace NerdStore.Vendas.Domain
         public int Codigo { get; private set; }
         public Guid ClienteId { get; private set; }
         public Guid? VoucherId { get; set; }
-        public bool? VoucherUtilizado { get; set; }
+        public bool VoucherUtilizado { get; set; }
         public decimal Desconto { get; private set; }
         public decimal ValorTotal { get; private set; }
         public DateTime DataCadastro { get; private set; }
