@@ -20,24 +20,16 @@ namespace NerdStore.Catalogo.Data.Repositories
         }
 
         public async Task<IEnumerable<Produto>> ObterTodos()
-        {
-            return await _context.Produtos.AsNoTracking().ToListAsync();
-        }
+            => await _context.Produtos.AsNoTracking().ToListAsync();
 
         public async Task<Produto> ObterPorId(Guid id)
-        {
-            return await _context.Produtos.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
-        }
+            => await _context.Produtos.AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
 
         public async Task<IEnumerable<Produto>> ObterPorCategoria(int codigo)
-        {
-            return await _context.Produtos.AsNoTracking().Include(p => p.Categoria).Where(c => c.Categoria.Codigo == codigo).ToListAsync();
-        }
+            => await _context.Produtos.AsNoTracking().Include(p => p.Categoria).Where(c => c.Categoria.Codigo == codigo).ToListAsync();
 
         public async Task<IEnumerable<Categoria>> ObterCategorias()
-        {
-            return await _context.Categorias.AsNoTracking().ToListAsync();
-        }
+            => await _context.Categorias.AsNoTracking().ToListAsync();
 
         public void Adicionar(Produto produto)
         {
