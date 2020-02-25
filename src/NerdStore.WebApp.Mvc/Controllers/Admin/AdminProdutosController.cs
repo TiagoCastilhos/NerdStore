@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using NerdStore.Catalogo.Application.Services;
 using NerdStore.Catalogo.Application.ViewModels;
-using System;
-using System.Threading.Tasks;
 
-namespace NerdStore.WebApp.Mvc.Controllers.Admin
+namespace NerdStore.WebApp.MVC.Controllers.Admin
 {
     public class AdminProdutosController : Controller
     {
@@ -22,7 +22,6 @@ namespace NerdStore.WebApp.Mvc.Controllers.Admin
             return View(await _produtoAppService.ObterTodos());
         }
 
-        [HttpGet]
         [Route("novo-produto")]
         public async Task<IActionResult> NovoProduto()
         {
